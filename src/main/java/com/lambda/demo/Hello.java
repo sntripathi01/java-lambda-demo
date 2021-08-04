@@ -11,12 +11,12 @@ public class Hello implements RequestHandler<Map<String, String>, LambdaResponse
         System.out.printf("Request land on lambda function");
         if (requestMap != null) {
             requestMap.forEach((s, s2) -> {
-                System.out.printf("Request key = " + s);
-                System.out.printf("Request value = " + s2);
+                System.out.printf(" Request key = " + s);
+                System.out.printf(" Request value = " + s2);
             });
         }
         LambdaResponse response = new LambdaResponse();
-        response.setBody("com.lambda.demo.Hello from java Lambda!");
+        response.setBody("Hello from java Lambda!");
         response.setStatusCode("200");
         System.out.printf("Response from lambda -- body = " + response.getBody() + ", code = " + response.getStatusCode());
         return response;
